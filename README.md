@@ -15,16 +15,16 @@
 ![last two](https://i.imgur.com/8yENiAQ.png)
 &nbsp;
 - Make sure numeric columns are formatted as numbers
-  - exact to two decimal points
+  - exact to two decimal points (eg. 1 -> 1.00)
+  - remove currency and percentage signs (eg. $ and %)
   - no comma separators  
 &nbsp;
 - Your CSV has these columns
+  - Search terms
   - Clicks
   - Cost
-  - Ctr
   - Conversions
-  - Impressions
-  - Avg. CPC
+  - Impr.
 
 ---
 ### Get Up & Running  
@@ -34,15 +34,15 @@ To run locally, clone the repo.
 git clone https://github.com/beigebrucewayne/NgramShinyApp.git
 ```
 
-Then, make sure you have R installed. The easiest way, if you have a Mac, is to use [homebrew](https://brew.sh/). Alternatively, you can always download from [CRAN](https://cran.r-project.org/).
-```bash
-brew tap homebrew/science
-brew install Caskroom/cask/xquartz
-brew install r
-```
+Then, make sure you have R installed. The easiest way is to download from [CRAN](https://cran.r-project.org/).
 
-Finally, start R in the project directory and invoke the Shiny library. You'll also need to install all of the libraries.
-```r
+
+Then, in the project directory start R
+```
+r
+```
+Then, in the r environment, type the following in order to install the packages. 
+```
 install.packages('shiny')
 install.packages('tidytext')
 install.packages('shinythemes')
@@ -51,5 +51,8 @@ install.packages('dt')
 install.packages('wordcloud')
 
 library(shiny)
+```
+Finally, execute the web app
+```
 shiny::runApp()
 ```
